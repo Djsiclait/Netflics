@@ -1,4 +1,4 @@
-Create Proc USP_USU_LOG
+Create Proc USP_USU_LOG_IN
 	@usuario varchar(50),
 	@contrasena varchar(50),
 	@sucursal varchar(4),
