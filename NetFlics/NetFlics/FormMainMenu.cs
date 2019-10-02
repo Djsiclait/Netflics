@@ -19,6 +19,13 @@ namespace NetFlics
             InitializeComponent();
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            LogOutSession();
+        }
+
         private void bttInventario_Click(object sender, EventArgs e)
         {
 
@@ -49,6 +56,11 @@ namespace NetFlics
 
         private void bttSalir_Click(object sender, EventArgs e)
         {
+            LogOutSession();
+        }
+
+        private void LogOutSession()
+        {
             string username = CapaEntidad.UserSession.userSession.username;
             string message = CapaNegocios.ModificarNegocios.UserLogOut(username, "Main");
 
@@ -61,6 +73,8 @@ namespace NetFlics
                 Formularios.formLogin = new FormLogin();
                 Formularios.formLogin.Show();
             }
+            else
+                MessageBox.Show("A fatal error has occured");
         }
     }
 }
