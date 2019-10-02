@@ -9,8 +9,26 @@ Create Proc USP_USU_LOG_IN
 			Begin
 				set @message = 'CAMBIO' -- Solicitando un cambio de contrasena
 			End
+		else if exists(select 1 from Tbl_Usuarios where fld_cod_usu = @usuario and fld_con_usu = @contrasena and fld_est_usu = 'S')
+			Begin
+				set @message = 'SUSPENDIDO'
+			End
+		else if exists(select 1 from Tbl_Usuarios where fld_cod_usu = @usuario and fld_con_usu = @contrasena and fld_est_usu = 'V')
+			Begin
+				set @message = 'VACACION'
+			End
 		else if exists(select 1 from Tbl_Usuarios where fld_cod_usu = @usuario and fld_con_usu = @contrasena) -- El usuario se connecta exitosamente
 			Begin
+				-- En caso que el usuario ha sido inactivo por un periodo y reinicia sus actividades
+				if exists(select 1 from Tbl_Usuarios where fld_cod_usu = @usuario and fld_est_usu = 'I')
+					Begin
+						Update Tbl_Usuarios
+							set
+								fld_est_usu = 'A'
+							where
+								fld_cod_usu = @usuario
+					End
+				
 				set @message = 'CORRECTO'
 				-- Actualizar el estado de sesion del usuario a En Sesion
 				exec USP_SES_USU @fld_cod_usu=@usuario, @fld_suc_log=@sucursal, @fld_est_log=1
@@ -24,7 +42,7 @@ Create Proc USP_USU_LOG_IN
 			End
 		else
 			Begin
-				set @message = 'INVALIDO' -- el nombre se usuario no existe
+				set @message = 'INVALIDO' -- el nombre de usuario no existe
 			End
 	End
 	
