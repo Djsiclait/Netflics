@@ -22,6 +22,7 @@ namespace NetFlics
         private void FormSplash_Load(object sender, EventArgs e)
         {
             Formularios.formSplash = this; // Setting the splash page as the main application
+            Formularios.formSplash.FormBorderStyle = FormBorderStyle.None;
 
             // Establishing a timer for splash page 
             splashTimer.Interval = 1 * 5 * 1000; // 5 seconds; format = min * sec * milsec
