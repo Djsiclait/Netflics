@@ -16,5 +16,10 @@ namespace NetFlics
         {
             InitializeComponent();
         }
+
+        private void bttInventario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
