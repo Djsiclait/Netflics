@@ -19,6 +19,12 @@ namespace NetFlics
             InitializeComponent();
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            Formularios.formSplash.Close();
+        }
+
         private void bttLogin_Click(object sender, EventArgs e)
         {
             LoginValidation();
