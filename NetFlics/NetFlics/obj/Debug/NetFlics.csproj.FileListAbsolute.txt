@@ -8,3 +8,7 @@ C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\o
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.exe
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.pdb
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormLogin.resources
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\bin\Debug\CapaNegocios.exe
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\bin\Debug\CapaDatos.exe
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\bin\Debug\CapaNegocios.pdb
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\bin\Debug\CapaDatos.pdb

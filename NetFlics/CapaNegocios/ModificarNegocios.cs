@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaDatos;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace CapaNegocios
 {
-    class ModificarNegocios
+    public class ModificarNegocios
     {
+        public static string UserLogIn(string username, string password, string branchOffice)
+        {
+            return CapaDatos.ModificarDatos.UserLogIn(username, password, branchOffice);
+        }
+
     }
 }

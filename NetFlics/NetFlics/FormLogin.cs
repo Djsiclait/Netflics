@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocios;
 
 namespace NetFlics
 {
@@ -42,7 +43,9 @@ namespace NetFlics
                 MessageBox.Show("Favor introducir su contraseña");
             else
             {
-                // TODO: Login Logic
+                string message = CapaNegocios.ModificarNegocios.UserLogIn(txtUsuario.Text, txtContrasena.Text, "MAIN");
+
+                MessageBox.Show(message);
             }
         }
     }
