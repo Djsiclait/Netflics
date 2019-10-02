@@ -3,10 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using CapaEntidad;
+
 
 namespace CapaDatos
 {
-    class ConsultarDatos
+    public class ConsultarDatos
     {
+        private static string dataSource = "Data Source=DESKTOP-PNLJFN5;Initial Catalog=DBNETFLICS;User id=prueba;password=prueba";
+        private static SqlConnection connection = new SqlConnection(dataSource);
+
+        private static void ConnectToDatabase()
+        {
+            if (connection.State == ConnectionState.Open)
+                connection.Close();
+
+            connection.Open();
+        }
+
+        private static void DisconnectFromDatabase()
+        {
+            connection.Close();
+        }
+
+        public static UserSession FetchUserSessionData(string username)
+        {
+            UserSession user = new UserSession();
+
+            ConnectToDatabase();
+
+            SqlCommand cmd = new SqlCommand("USP_FETCH_USU", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 50).Value = username;
+
+            SqlDataReader dataReader;
+
+            dataReader = cmd.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                user = new UserSession();
+
+                user.username = dataReader["fld_cod_usu"].ToString();
+                user.firstName = dataReader["fld_nom_usu"].ToString();
+                user.lastName = dataReader["fld_ape_usu"].ToString();
+                user.role = dataReader["fld_rol_usu"].ToString();
+            }
+
+            DisconnectFromDatabase();
+
+            return user;
+        }
     }
 }

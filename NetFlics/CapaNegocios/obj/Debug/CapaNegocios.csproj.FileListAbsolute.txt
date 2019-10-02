@@ -8,3 +8,5 @@ C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaNegoci
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaNegocios\obj\Debug\CapaNegocios.csprojResolveAssemblyReference.cache
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaNegocios\obj\Debug\CapaNegocios.exe
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaNegocios\obj\Debug\CapaNegocios.pdb
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaNegocios\bin\Debug\CapaEntidad.exe
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaNegocios\bin\Debug\CapaEntidad.pdb

@@ -6,3 +6,5 @@ C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaDatos\
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaDatos\bin\Debug\CapaDatos.pdb
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaDatos\obj\Debug\CapaDatos.exe
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaDatos\bin\Debug\CapaEntidad.exe
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaDatos\bin\Debug\CapaEntidad.pdb

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocios;
+using CapaEntidad;
 
 namespace NetFlics
 {
@@ -59,8 +60,12 @@ namespace NetFlics
                     MessageBox.Show("Este nombre de usuario no ha sido registrado.");
                 else
                 {
+                    // Fetching data necessary for initiating session
+                    CapaEntidad.UserSession.userSession = CapaNegocios.ConsultarNegocios.FetchUserSessionData(txtUsuario.Text);
+             
                     Formularios.formLogin.Dispose();
 
+                    // Login SUCCESS
                     Formularios.formMainMenu = new FormMainMenu();
                     Formularios.formMainMenu.Show();
                 }
