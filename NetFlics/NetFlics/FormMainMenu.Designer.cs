@@ -147,6 +147,7 @@
             this.bttSalir.Text = "Salir";
             this.bttSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bttSalir.UseVisualStyleBackColor = false;
+            this.bttSalir.Click += new System.EventHandler(this.bttSalir_Click);
             // 
             // bttPeliculas
             // 

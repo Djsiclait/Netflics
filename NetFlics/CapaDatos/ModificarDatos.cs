@@ -47,5 +47,26 @@ namespace CapaDatos
 
             return cmd.Parameters["@message"].Value.ToString();
         }
+
+        public static string UserLogOut(string username, string branchOffice)
+        {
+            ConnectToDatabase();
+
+            SqlCommand cmd = new SqlCommand("USP_USU_LOG_OUT", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 50).Value = username;
+            cmd.Parameters.Add("@sucursal", SqlDbType.VarChar, 4).Value = branchOffice;
+
+            SqlParameter message = new SqlParameter("@message", SqlDbType.VarChar, 200);
+            message.Direction = ParameterDirection.Output;
+
+            cmd.Parameters.Add(message);
+
+            Int32 re;
+            re = Convert.ToInt32(cmd.ExecuteNonQuery());
+
+            return cmd.Parameters["@message"].Value.ToString();
+        }
     }
 }

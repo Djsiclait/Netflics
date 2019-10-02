@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaEntidad;
+using CapaNegocios;
 
 namespace NetFlics
 {
@@ -43,6 +44,22 @@ namespace NetFlics
                     return "Fiscal";
                 default:
                     return "Usuario";
+            }
+        }
+
+        private void bttSalir_Click(object sender, EventArgs e)
+        {
+            string username = CapaEntidad.UserSession.userSession.username;
+            string message = CapaNegocios.ModificarNegocios.UserLogOut(username, "Main");
+
+            if (message == "EXITO")
+            {
+                CapaEntidad.UserSession.userSession = new UserSession(); // Clear user session data for future log in
+                Formularios.formMainMenu.Dispose();
+
+                // returning to login page
+                Formularios.formLogin = new FormLogin();
+                Formularios.formLogin.Show();
             }
         }
     }
