@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocios
 {
-    class InsertarNegocio
+    class InsertarNegocios
     {
     }
 }

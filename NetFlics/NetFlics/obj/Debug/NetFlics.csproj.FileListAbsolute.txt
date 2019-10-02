@@ -1,1 +1,9 @@
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\bin\Debug\NetFlics.exe.config
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\bin\Debug\NetFlics.exe
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\bin\Debug\NetFlics.pdb
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormSplash.resources
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.Properties.Resources.resources
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.exe
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.pdb
