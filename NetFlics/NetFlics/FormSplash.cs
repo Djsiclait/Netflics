@@ -21,6 +21,8 @@ namespace NetFlics
 
         private void FormSplash_Load(object sender, EventArgs e)
         {
+            Formularios.formSplash = this; // Setting the splash page as the main application
+
             // Establishing a timer for splash page 
             splashTimer.Interval = 1 * 5 * 1000; // 5 seconds; format = min * sec * milsec
             splashTimer.Tick += new EventHandler(SplashTransition);
@@ -29,7 +31,7 @@ namespace NetFlics
 
         private void SplashTransition(object sender, EventArgs e) // End result of timer used to transition to login form
         {
-            this.Hide(); // Hide Splash page
+            Formularios.formSplash.Hide(); // Hide Splash page
 
             // Summon Login Page
             Formularios.formLogin = new FormLogin();
