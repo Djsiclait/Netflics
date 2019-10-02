@@ -29,7 +29,7 @@ namespace CapaDatos
         {
             ConnectToDatabase();
 
-            SqlCommand cmd = new SqlCommand("USP_USU_LOG", connection);
+            SqlCommand cmd = new SqlCommand("USP_USU_LOG_IN", connection);
             cmd.CommandType = CommandType.StoredProcedure;
 
             // Declaring paramaters
