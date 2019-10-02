@@ -11,5 +11,7 @@ namespace NetFlics
         public static FormSplash formSplash = new  FormSplash();
 
         public static FormLogin formLogin = new FormLogin();
+
+        public static FormMainMenu formMainMenu = new FormMainMenu();
     }
 }
