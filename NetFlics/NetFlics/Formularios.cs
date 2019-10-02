@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace NetFlics
 {
-    class Formularios
+    public class Formularios
     {
+        public static FormSplash formSplash = new  FormSplash();
+
+        public static FormLogin formLogin = new FormLogin();
     }
 }
