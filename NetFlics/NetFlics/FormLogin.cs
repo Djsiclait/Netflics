@@ -45,7 +45,25 @@ namespace NetFlics
             {
                 string message = CapaNegocios.ModificarNegocios.UserLogIn(txtUsuario.Text, txtContrasena.Text, "MAIN");
 
-                MessageBox.Show(message);
+                if (message == "INCORRECTO")
+                {
+                    txtContrasena.Text = "";
+                    MessageBox.Show("La contraseña es incorrecta.");
+                }
+                else if (message == "CAMBIO")
+                {
+                    // TODO: Prompt password change form
+                    MessageBox.Show(message);
+                }
+                else if (message == "INVALIDO")
+                    MessageBox.Show("Este nombre de usuario no ha sido registrado.");
+                else
+                {
+                    Formularios.formLogin.Dispose();
+
+                    Formularios.formMainMenu = new FormMainMenu();
+                    Formularios.formMainMenu.Show();
+                }
             }
         }
     }
