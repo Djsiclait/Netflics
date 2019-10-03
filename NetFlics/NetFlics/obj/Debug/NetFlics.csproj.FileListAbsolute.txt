@@ -15,3 +15,4 @@ C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\b
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormMainMenu.resources
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\bin\Debug\CapaEntidad.exe
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\bin\Debug\CapaEntidad.pdb
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormUsersMaster.resources
