@@ -88,5 +88,11 @@ namespace NetFlics
                 }
             }
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            if (CapaEntidad.UserSession.userSession != null)
+                txtUsuario.Text = CapaEntidad.UserSession.userSession.username;
+        }
     }
 }
