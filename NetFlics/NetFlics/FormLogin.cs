@@ -59,8 +59,15 @@ namespace NetFlics
                 }
                 else if (message == "CAMBIO") // Password needs to be changed
                 {
-                    // TODO: Prompt password change form
-                    MessageBox.Show(message);
+                    // Saving the only username for the next page to use as refrence
+                    CapaEntidad.UserSession.userSession = new UserSession();
+                    CapaEntidad.UserSession.userSession.username = txtUsuario.Text;
+
+                    Formularios.formLogin.Dispose();
+
+                    Formularios.formPasswordChange = new FormPasswordChange();
+                    Formularios.formPasswordChange.Show();
+
                 }
                 else if (message == "INVALIDO") // Current username is unregistered
                     MessageBox.Show("Este nombre de usuario no ha sido registrado.");

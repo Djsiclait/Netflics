@@ -68,5 +68,27 @@ namespace CapaDatos
 
             return cmd.Parameters["@message"].Value.ToString();
         }
+
+        public static string ChangeUserPassword(string username, string newPassword)
+        {
+            ConnectToDatabase();
+
+            SqlCommand cmd = new SqlCommand("USP_CHANGE_PASS_USU", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 50).Value = username;
+            cmd.Parameters.Add("@nueva_contrasena", SqlDbType.VarChar, 50).Value = newPassword;
+
+            SqlParameter message = new SqlParameter("@message", SqlDbType.VarChar, 200);
+            message.Direction = ParameterDirection.Output;
+
+            cmd.Parameters.Add(message);
+
+            Int32 re;
+            re = Convert.ToInt32(cmd.ExecuteNonQuery());
+
+            return cmd.Parameters["@message"].Value.ToString();
+
+        }
     }
 }

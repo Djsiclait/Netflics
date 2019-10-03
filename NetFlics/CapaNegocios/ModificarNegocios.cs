@@ -20,6 +20,10 @@ namespace CapaNegocios
         {
             return CapaDatos.ModificarDatos.UserLogOut(username, branchOffice);
         }
+        public static string ChangeUserPassword(string username, string newPassword)
+        {
+            return CapaDatos.ModificarDatos.ChangeUserPassword(username, newPassword);
+        }
 
     }
 }
