@@ -29,7 +29,9 @@ namespace NetFlics
 
             if (message == "EXITO")
             {
+                string lastSession = CapaEntidad.UserSession.userSession.username;
                 CapaEntidad.UserSession.userSession = new UserSession(); // Clear user session data for future log in
+                CapaEntidad.UserSession.userSession.username = lastSession;
                 Formularios.formMainMenu.Dispose();
 
                 // returning to login page
@@ -85,6 +87,15 @@ namespace NetFlics
                 MessageBox.Show("Favor elegir una categoria de busqueda.");
             else
                 LoadUserRegistry(cbBuscarPor.Text, txtBuscarText.Text);
+        }
+
+        private void bttNuevoUsuario_Click(object sender, EventArgs e)
+        {
+            Formularios.formUsersMaster.Dispose();
+
+            // Calling page to add new user to the registry
+            Formularios.formNewUser = new FormNewUser();
+            Formularios.formNewUser.Show();
         }
     }
 }

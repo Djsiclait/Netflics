@@ -198,6 +198,7 @@
             this.bttNuevoUsuario.TabIndex = 4;
             this.bttNuevoUsuario.Text = "Nuevo Usuario";
             this.bttNuevoUsuario.UseVisualStyleBackColor = false;
+            this.bttNuevoUsuario.Click += new System.EventHandler(this.bttNuevoUsuario_Click);
             // 
             // dgUsuarios
             // 

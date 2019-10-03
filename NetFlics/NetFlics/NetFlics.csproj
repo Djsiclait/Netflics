@@ -58,6 +58,12 @@
     <Compile Include="FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewUser.Designer.cs">
+      <DependentUpon>FormNewUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPasswordChange.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewUser.resx">
+      <DependentUpon>FormNewUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPasswordChange.resx">
       <DependentUpon>FormPasswordChange.cs</DependentUpon>

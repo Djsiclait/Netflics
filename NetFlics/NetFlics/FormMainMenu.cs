@@ -66,7 +66,9 @@ namespace NetFlics
 
             if (message == "EXITO")
             {
+                string lastSession = CapaEntidad.UserSession.userSession.username;
                 CapaEntidad.UserSession.userSession = new UserSession(); // Clear user session data for future log in
+                CapaEntidad.UserSession.userSession.username = lastSession;
                 Formularios.formMainMenu.Dispose();
 
                 // returning to login page
