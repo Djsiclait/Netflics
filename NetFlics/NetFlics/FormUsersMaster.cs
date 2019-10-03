@@ -49,6 +49,11 @@ namespace NetFlics
             Formularios.formMainMenu.Show();
         }
 
+        private void bttBuscar_Click(object sender, EventArgs e)
+        {
+            SearchBarValidation();
+        }
+
         private void FormUsersMaster_Load(object sender, EventArgs e)
         {
             LoadUserRegistry("Todos", "");
@@ -66,6 +71,20 @@ namespace NetFlics
             dgUsuarios.Columns["position"].HeaderText = "Cargo";
             dgUsuarios.Columns["role"].HeaderText = "Rol";
             dgUsuarios.Columns["branchOffice"].HeaderText = "Sucursal";
+        }
+
+        private void txtBuscarText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SearchBarValidation();
+        }
+
+        private void SearchBarValidation()
+        {
+            if (cbBuscarPor.Text == "")
+                MessageBox.Show("Favor elegir una categoria de busqueda.");
+            else
+                LoadUserRegistry(cbBuscarPor.Text, txtBuscarText.Text);
         }
     }
 }

@@ -100,6 +100,7 @@
             this.bttBuscar.TabIndex = 3;
             this.bttBuscar.Text = "Buscar";
             this.bttBuscar.UseVisualStyleBackColor = false;
+            this.bttBuscar.Click += new System.EventHandler(this.bttBuscar_Click);
             // 
             // txtBuscarText
             // 
@@ -110,6 +111,7 @@
             this.txtBuscarText.Name = "txtBuscarText";
             this.txtBuscarText.Size = new System.Drawing.Size(263, 23);
             this.txtBuscarText.TabIndex = 2;
+            this.txtBuscarText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscarText_KeyDown);
             // 
             // cbBuscarPor
             // 
