@@ -13,5 +13,7 @@ namespace NetFlics
         public static FormLogin formLogin = new FormLogin();
 
         public static FormMainMenu formMainMenu = new FormMainMenu();
+
+        public static FormUsersMaster formUsersMaster = new FormUsersMaster();
     }
 }

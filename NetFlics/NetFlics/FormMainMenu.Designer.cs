@@ -132,6 +132,7 @@
             this.bttUsuarios.Text = "Usuarios";
             this.bttUsuarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bttUsuarios.UseVisualStyleBackColor = false;
+            this.bttUsuarios.Click += new System.EventHandler(this.bttUsuarios_Click);
             // 
             // bttSalir
             // 

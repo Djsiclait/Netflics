@@ -62,7 +62,7 @@ namespace NetFlics
         private void LogOutSession()
         {
             string username = CapaEntidad.UserSession.userSession.username;
-            string message = CapaNegocios.ModificarNegocios.UserLogOut(username, "Main");
+            string message = CapaNegocios.ModificarNegocios.UserLogOut(username, "MAIN");
 
             if (message == "EXITO")
             {
@@ -75,6 +75,15 @@ namespace NetFlics
             }
             else
                 MessageBox.Show("A fatal error has occured");
+        }
+
+        private void bttUsuarios_Click(object sender, EventArgs e)
+        {
+            Formularios.formMainMenu.Dispose();
+
+            // Calling Users Master Page
+            Formularios.formUsersMaster = new FormUsersMaster();
+            Formularios.formUsersMaster.Show();
         }
     }
 }
