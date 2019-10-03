@@ -57,5 +57,43 @@ namespace CapaDatos
 
             return user;
         }
+
+        public static List<User> SearchUserRegistry(string category, string keyword)
+        {
+            List<User> registry = new List<User>();
+
+            ConnectToDatabase();
+
+            SqlCommand cmd = new SqlCommand("USP_SEARCH_USU", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@categoria", SqlDbType.VarChar, 30).Value = category;
+            cmd.Parameters.Add("@buscado", SqlDbType.VarChar, 200).Value = keyword;
+
+            SqlDataReader dataReader;
+
+            dataReader = cmd.ExecuteReader();
+
+            User user = new User();
+            while (dataReader.Read())
+            {
+                user = new User();
+
+                user.username = dataReader["fld_cod_usu"].ToString();
+                user.firstName = dataReader["fld_nom_usu"].ToString();
+                user.lastName = dataReader["fld_ape_usu"].ToString();
+                user.email = dataReader["fld_cor_usu"].ToString();
+                user.gender = dataReader["fld_desc_sex"].ToString();
+                user.position = dataReader["fld_desc_car"].ToString();
+                user.role = dataReader["fld_desc_rol"].ToString();
+                user.branchOffice = dataReader["fld_nom_suc"].ToString();
+
+                registry.Add(user);
+            }
+
+            DisconnectFromDatabase();
+
+            return registry;
+        }
     }
 }

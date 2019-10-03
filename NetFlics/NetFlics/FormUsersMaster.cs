@@ -48,5 +48,24 @@ namespace NetFlics
             Formularios.formMainMenu = new FormMainMenu();
             Formularios.formMainMenu.Show();
         }
+
+        private void FormUsersMaster_Load(object sender, EventArgs e)
+        {
+            LoadUserRegistry("Todos", "");
+        }
+
+        private void LoadUserRegistry(String category, string keyword)
+        {
+            dgUsuarios.DataSource = CapaNegocios.ConsultarNegocios.SearchUserRegistry(category, keyword);
+
+            dgUsuarios.Columns["username"].HeaderText = "Nombre de Usuario";
+            dgUsuarios.Columns["firstname"].HeaderText = "Nombre";
+            dgUsuarios.Columns["lastname"].HeaderText = "Apellido";
+            dgUsuarios.Columns["email"].HeaderText = "Correo";
+            dgUsuarios.Columns["gender"].HeaderText = "Sexo";
+            dgUsuarios.Columns["position"].HeaderText = "Cargo";
+            dgUsuarios.Columns["role"].HeaderText = "Rol";
+            dgUsuarios.Columns["branchOffice"].HeaderText = "Sucursal";
+        }
     }
 }

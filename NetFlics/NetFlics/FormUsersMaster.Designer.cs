@@ -54,8 +54,8 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(243, 9);
+            this.label1.ForeColor = System.Drawing.Color.Tomato;
+            this.label1.Location = new System.Drawing.Point(375, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 20);
             this.label1.TabIndex = 0;
@@ -135,7 +135,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(7, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 17);
@@ -150,10 +150,10 @@
             this.groupBox1.Controls.Add(this.bttNuevoUsuario);
             this.groupBox1.Controls.Add(this.dgUsuarios);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Red;
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.groupBox1.Location = new System.Drawing.Point(13, 115);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(659, 475);
+            this.groupBox1.Size = new System.Drawing.Size(859, 475);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro";
@@ -164,7 +164,7 @@
             this.bttCambiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bttCambiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttCambiar.ForeColor = System.Drawing.Color.Red;
-            this.bttCambiar.Location = new System.Drawing.Point(378, 437);
+            this.bttCambiar.Location = new System.Drawing.Point(687, 437);
             this.bttCambiar.Name = "bttCambiar";
             this.bttCambiar.Size = new System.Drawing.Size(166, 32);
             this.bttCambiar.TabIndex = 14;
@@ -177,7 +177,7 @@
             this.bttModificarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bttModificarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttModificarUsuario.ForeColor = System.Drawing.Color.Red;
-            this.bttModificarUsuario.Location = new System.Drawing.Point(227, 437);
+            this.bttModificarUsuario.Location = new System.Drawing.Point(536, 437);
             this.bttModificarUsuario.Name = "bttModificarUsuario";
             this.bttModificarUsuario.Size = new System.Drawing.Size(145, 32);
             this.bttModificarUsuario.TabIndex = 5;
@@ -190,7 +190,7 @@
             this.bttNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bttNuevoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttNuevoUsuario.ForeColor = System.Drawing.Color.Red;
-            this.bttNuevoUsuario.Location = new System.Drawing.Point(84, 437);
+            this.bttNuevoUsuario.Location = new System.Drawing.Point(393, 437);
             this.bttNuevoUsuario.Name = "bttNuevoUsuario";
             this.bttNuevoUsuario.Size = new System.Drawing.Size(137, 32);
             this.bttNuevoUsuario.TabIndex = 4;
@@ -199,11 +199,16 @@
             // 
             // dgUsuarios
             // 
+            this.dgUsuarios.AllowUserToAddRows = false;
+            this.dgUsuarios.AllowUserToDeleteRows = false;
+            this.dgUsuarios.AllowUserToResizeColumns = false;
+            this.dgUsuarios.AllowUserToResizeRows = false;
             this.dgUsuarios.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUsuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgUsuarios.Location = new System.Drawing.Point(7, 23);
             this.dgUsuarios.Name = "dgUsuarios";
-            this.dgUsuarios.Size = new System.Drawing.Size(646, 408);
+            this.dgUsuarios.Size = new System.Drawing.Size(846, 408);
             this.dgUsuarios.TabIndex = 0;
             // 
             // label3
@@ -233,7 +238,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(684, 661);
+            this.ClientSize = new System.Drawing.Size(884, 661);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
@@ -245,6 +250,7 @@
             this.Name = "FormUsersMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
+            this.Load += new System.EventHandler(this.FormUsersMaster_Load);
             this.gbBuscar.ResumeLayout(false);
             this.gbBuscar.PerformLayout();
             this.groupBox1.ResumeLayout(false);
