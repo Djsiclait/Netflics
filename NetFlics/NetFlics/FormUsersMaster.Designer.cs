@@ -32,21 +32,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bttVolver = new System.Windows.Forms.Button();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbBuscarPor = new System.Windows.Forms.ComboBox();
-            this.txtBuscarText = new System.Windows.Forms.TextBox();
             this.bttBuscar = new System.Windows.Forms.Button();
+            this.txtBuscarText = new System.Windows.Forms.TextBox();
+            this.cbBuscarPor = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bttCambiar = new System.Windows.Forms.Button();
+            this.bttModificarUsuario = new System.Windows.Forms.Button();
+            this.bttNuevoUsuario = new System.Windows.Forms.Button();
+            this.dgUsuarios = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgUsuarios = new System.Windows.Forms.DataGridView();
-            this.bttNuevoUsuario = new System.Windows.Forms.Button();
-            this.bttModificarUsuario = new System.Windows.Forms.Button();
-            this.bttCambiar = new System.Windows.Forms.Button();
             this.gbBuscar.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -88,46 +88,6 @@
             this.gbBuscar.TabIndex = 2;
             this.gbBuscar.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(7, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Buscar Por:";
-            // 
-            // cbBuscarPor
-            // 
-            this.cbBuscarPor.BackColor = System.Drawing.Color.Silver;
-            this.cbBuscarPor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBuscarPor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbBuscarPor.ForeColor = System.Drawing.Color.DarkRed;
-            this.cbBuscarPor.FormattingEnabled = true;
-            this.cbBuscarPor.Items.AddRange(new object[] {
-            "Nombre",
-            "Nombre de Usuario",
-            "Correo",
-            "Cargo",
-            "Rol",
-            "Sucursal"});
-            this.cbBuscarPor.Location = new System.Drawing.Point(107, 20);
-            this.cbBuscarPor.Name = "cbBuscarPor";
-            this.cbBuscarPor.Size = new System.Drawing.Size(168, 21);
-            this.cbBuscarPor.TabIndex = 1;
-            // 
-            // txtBuscarText
-            // 
-            this.txtBuscarText.BackColor = System.Drawing.Color.Silver;
-            this.txtBuscarText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarText.ForeColor = System.Drawing.Color.DarkRed;
-            this.txtBuscarText.Location = new System.Drawing.Point(281, 20);
-            this.txtBuscarText.Name = "txtBuscarText";
-            this.txtBuscarText.Size = new System.Drawing.Size(263, 23);
-            this.txtBuscarText.TabIndex = 2;
-            // 
             // bttBuscar
             // 
             this.bttBuscar.BackColor = System.Drawing.Color.Silver;
@@ -140,6 +100,47 @@
             this.bttBuscar.TabIndex = 3;
             this.bttBuscar.Text = "Buscar";
             this.bttBuscar.UseVisualStyleBackColor = false;
+            // 
+            // txtBuscarText
+            // 
+            this.txtBuscarText.BackColor = System.Drawing.Color.Silver;
+            this.txtBuscarText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarText.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtBuscarText.Location = new System.Drawing.Point(281, 20);
+            this.txtBuscarText.Name = "txtBuscarText";
+            this.txtBuscarText.Size = new System.Drawing.Size(263, 23);
+            this.txtBuscarText.TabIndex = 2;
+            // 
+            // cbBuscarPor
+            // 
+            this.cbBuscarPor.BackColor = System.Drawing.Color.Silver;
+            this.cbBuscarPor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBuscarPor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbBuscarPor.ForeColor = System.Drawing.Color.DarkRed;
+            this.cbBuscarPor.FormattingEnabled = true;
+            this.cbBuscarPor.Items.AddRange(new object[] {
+            "Cargo",
+            "Correo",
+            "Nombre",
+            "Nombre de Usuario",
+            "Rol",
+            "Sucursal",
+            "Todos"});
+            this.cbBuscarPor.Location = new System.Drawing.Point(107, 20);
+            this.cbBuscarPor.Name = "cbBuscarPor";
+            this.cbBuscarPor.Size = new System.Drawing.Size(168, 21);
+            this.cbBuscarPor.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(7, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Buscar Por:";
             // 
             // groupBox1
             // 
@@ -156,6 +157,54 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro";
+            // 
+            // bttCambiar
+            // 
+            this.bttCambiar.BackColor = System.Drawing.Color.Silver;
+            this.bttCambiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttCambiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttCambiar.ForeColor = System.Drawing.Color.Red;
+            this.bttCambiar.Location = new System.Drawing.Point(378, 437);
+            this.bttCambiar.Name = "bttCambiar";
+            this.bttCambiar.Size = new System.Drawing.Size(166, 32);
+            this.bttCambiar.TabIndex = 14;
+            this.bttCambiar.Text = "Cambiar Contraseña";
+            this.bttCambiar.UseVisualStyleBackColor = false;
+            // 
+            // bttModificarUsuario
+            // 
+            this.bttModificarUsuario.BackColor = System.Drawing.Color.Silver;
+            this.bttModificarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttModificarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttModificarUsuario.ForeColor = System.Drawing.Color.Red;
+            this.bttModificarUsuario.Location = new System.Drawing.Point(227, 437);
+            this.bttModificarUsuario.Name = "bttModificarUsuario";
+            this.bttModificarUsuario.Size = new System.Drawing.Size(145, 32);
+            this.bttModificarUsuario.TabIndex = 5;
+            this.bttModificarUsuario.Text = "Modificar Usuario";
+            this.bttModificarUsuario.UseVisualStyleBackColor = false;
+            // 
+            // bttNuevoUsuario
+            // 
+            this.bttNuevoUsuario.BackColor = System.Drawing.Color.Silver;
+            this.bttNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttNuevoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttNuevoUsuario.ForeColor = System.Drawing.Color.Red;
+            this.bttNuevoUsuario.Location = new System.Drawing.Point(84, 437);
+            this.bttNuevoUsuario.Name = "bttNuevoUsuario";
+            this.bttNuevoUsuario.Size = new System.Drawing.Size(137, 32);
+            this.bttNuevoUsuario.TabIndex = 4;
+            this.bttNuevoUsuario.Text = "Nuevo Usuario";
+            this.bttNuevoUsuario.UseVisualStyleBackColor = false;
+            // 
+            // dgUsuarios
+            // 
+            this.dgUsuarios.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUsuarios.Location = new System.Drawing.Point(7, 23);
+            this.dgUsuarios.Name = "dgUsuarios";
+            this.dgUsuarios.Size = new System.Drawing.Size(646, 408);
+            this.dgUsuarios.TabIndex = 0;
             // 
             // label3
             // 
@@ -179,54 +228,6 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // dgUsuarios
-            // 
-            this.dgUsuarios.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Location = new System.Drawing.Point(7, 23);
-            this.dgUsuarios.Name = "dgUsuarios";
-            this.dgUsuarios.Size = new System.Drawing.Size(646, 408);
-            this.dgUsuarios.TabIndex = 0;
-            // 
-            // bttNuevoUsuario
-            // 
-            this.bttNuevoUsuario.BackColor = System.Drawing.Color.Silver;
-            this.bttNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bttNuevoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttNuevoUsuario.ForeColor = System.Drawing.Color.Red;
-            this.bttNuevoUsuario.Location = new System.Drawing.Point(84, 437);
-            this.bttNuevoUsuario.Name = "bttNuevoUsuario";
-            this.bttNuevoUsuario.Size = new System.Drawing.Size(137, 32);
-            this.bttNuevoUsuario.TabIndex = 4;
-            this.bttNuevoUsuario.Text = "Nuevo Usuario";
-            this.bttNuevoUsuario.UseVisualStyleBackColor = false;
-            // 
-            // bttModificarUsuario
-            // 
-            this.bttModificarUsuario.BackColor = System.Drawing.Color.Silver;
-            this.bttModificarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bttModificarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttModificarUsuario.ForeColor = System.Drawing.Color.Red;
-            this.bttModificarUsuario.Location = new System.Drawing.Point(227, 437);
-            this.bttModificarUsuario.Name = "bttModificarUsuario";
-            this.bttModificarUsuario.Size = new System.Drawing.Size(145, 32);
-            this.bttModificarUsuario.TabIndex = 5;
-            this.bttModificarUsuario.Text = "Modificar Usuario";
-            this.bttModificarUsuario.UseVisualStyleBackColor = false;
-            // 
-            // bttCambiar
-            // 
-            this.bttCambiar.BackColor = System.Drawing.Color.Silver;
-            this.bttCambiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bttCambiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttCambiar.ForeColor = System.Drawing.Color.Red;
-            this.bttCambiar.Location = new System.Drawing.Point(378, 437);
-            this.bttCambiar.Name = "bttCambiar";
-            this.bttCambiar.Size = new System.Drawing.Size(166, 32);
-            this.bttCambiar.TabIndex = 14;
-            this.bttCambiar.Text = "Cambiar Contraseña";
-            this.bttCambiar.UseVisualStyleBackColor = false;
-            // 
             // FormUsersMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,8 +248,8 @@
             this.gbBuscar.ResumeLayout(false);
             this.gbBuscar.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
