@@ -95,5 +95,26 @@ namespace CapaDatos
 
             return registry;
         }
+
+        public static string ValidateNewUsername(string username)
+        {
+            ConnectToDatabase();
+
+            SqlCommand cmd = new SqlCommand("USP_VAL_USU", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 50).Value = username;
+
+            SqlParameter message = new SqlParameter("@message", SqlDbType.VarChar, 200);
+            message.Direction = ParameterDirection.Output;
+
+            cmd.Parameters.Add(message);
+
+            Int32 re;
+
+            re = Convert.ToInt32(cmd.ExecuteNonQuery());
+
+            return cmd.Parameters["@message"].Value.ToString();
+        }
     }
 }

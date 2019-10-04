@@ -18,5 +18,9 @@ namespace CapaNegocios
         {
             return CapaDatos.ConsultarDatos.SearchUserRegistry(category, keyword);
         }
+        public static string ValidateNewUsername(string username)
+        {
+            return CapaDatos.ConsultarDatos.ValidateNewUsername(username);
+        }
     }
 }
