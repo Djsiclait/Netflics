@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    class Telephone
+    public class Telephone
     {
+        public string owner { get; set; }
+        public string phoneNumber { get; set; }
+        public string phoneType { get; set; }
+        public string phoneState { get; set; }
     }
 }

@@ -230,8 +230,38 @@ namespace NetFlics
 
             // All data have been validated
             if (clean)
-            { 
-                MessageBox.Show("Success"); // TODO: Add New User
+            {
+                string messageUser = CapaNegocios.InsertarNegocios.RegisterNewUser(CreateNewUser(), CapaEntidad.UserSession.userSession.username);
+
+                string messagePhone1 = CapaNegocios.InsertarNegocios.RegisterUserPhoneNumber(CreateNewTelephone(txtTelefono1.Text, cbTipo1.Text));
+
+                string messagePhone2 = "";
+                if (txtTelefono2.Text != "")
+                    messagePhone2 = CapaNegocios.InsertarNegocios.RegisterUserPhoneNumber(CreateNewTelephone(txtTelefono2.Text, cbTipo2.Text));
+
+                string messageAddress = CapaNegocios.InsertarNegocios.RegisterNewAddress(CreateNewAddress());
+
+                if (messageUser == "EXITO" && messagePhone1 == "EXITO" && messageAddress == "EXITO")
+                {
+                    if (txtTelefono2.Text != "" && messagePhone2 == "ERROR")
+                        MessageBox.Show("Favor revisar el segundo telefono");
+                    else
+                    {
+                        MessageBox.Show("El usuario, " + txtNombreUsuario.Text + ", ha sido registrado correctamente");
+                        CleanBuffer();
+                    }
+                }
+                else if (messageUser == "ERROR")
+                    MessageBox.Show("ERROR FATAL: Creacion Usuario");
+                else if (messagePhone1 == "ERROR")
+                    MessageBox.Show("ERROR FATAL: Creacion Primer Telefono");
+                else if (messagePhone2 == "ERROR")
+                    MessageBox.Show("ERROR FATAL: Creacion Segundo Telefono");
+                else if (messageAddress == "ERROR")
+                    MessageBox.Show("ERROR FATAL: Creacion Direccion");
+                else
+                    MessageBox.Show("ERROR FATAL: Fin del Mundo");
+
             }
         }
 
@@ -436,7 +466,7 @@ namespace NetFlics
         private void txtTelefono2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                if (ValidatePhoneNumber(txtTelefono2.Text))
+                if (txtTelefono2.Text != "" && ValidatePhoneNumber(txtTelefono2.Text))
                 {
                     lbErrorTelefono2.Text = "Telefono valido!";
                     lbErrorTelefono2.ForeColor = Color.Green;
@@ -444,7 +474,7 @@ namespace NetFlics
                     cbTipo2.Focus();
                     ValidateUsername();
                 }
-                else
+                else if (txtTelefono2.Text != "")
                 {
                     txtTelefono2.Focus();
                     lbErrorTelefono2.Text = "Formato invalido";
@@ -590,6 +620,62 @@ namespace NetFlics
         }
 
         // Auxiliary Functions
+        private User CreateNewUser()
+        {
+            User newUser = new User();
+
+            newUser.username = txtNombreUsuario.Text;
+            newUser.position = cbCargo.Text;
+            newUser.salary = FormatSalary();
+            newUser.paymentSchedule = cbFormaPago.Text;
+            newUser.role = cbRol.Text;
+            newUser.branchOffice = cbSucursal.Text;
+
+            newUser.firstName = txtNombre.Text;
+            newUser.lastName = txtApellido.Text;
+            newUser.identificationType = cbTipoDocumento.Text;
+            newUser.identification = txtDocumento.Text;
+            newUser.email = txtCorreo.Text;
+            newUser.gender = cbSexo.Text;
+            newUser.birthDate = Convert.ToDateTime(dtFechaNacimiento.Text);
+            newUser.nationality = cbNacionalidad.Text;
+
+            return newUser;
+        }
+
+        private Telephone CreateNewTelephone(string phoneNumber, string phoneType)
+        {
+            Telephone newTelephone = new Telephone();
+
+            newTelephone.owner = txtNombreUsuario.Text;
+            newTelephone.phoneNumber = phoneNumber;
+            newTelephone.phoneType = phoneType;
+
+            return newTelephone;
+        }
+
+        private Address CreateNewAddress()
+        {
+            Address newAddress = new Address();
+
+            newAddress.owner = txtNombreUsuario.Text;
+            newAddress.address = txtDireccion.Text;
+            newAddress.addressType = cbTipoDireccion.Text;
+            newAddress.sector = txtSector.Text;
+            newAddress.city = txtCiudad.Text;
+
+            return newAddress;
+        }
+
+        private float FormatSalary()
+        {
+            float salary;
+
+            float.TryParse(txtSalario.Text, out salary);
+
+            return salary;
+        }
+
         private void ValidateUsername()
         {
             if (txtNombreUsuario.Text != "")

@@ -518,8 +518,7 @@
             this.cbTipo2.FormattingEnabled = true;
             this.cbTipo2.Items.AddRange(new object[] {
             "Casa",
-            "Celular",
-            "Trabajo"});
+            "Celular"});
             this.cbTipo2.Location = new System.Drawing.Point(593, 193);
             this.cbTipo2.Name = "cbTipo2";
             this.cbTipo2.Size = new System.Drawing.Size(124, 24);
@@ -595,8 +594,7 @@
             this.cbTipo1.FormattingEnabled = true;
             this.cbTipo1.Items.AddRange(new object[] {
             "Casa",
-            "Celular",
-            "Trabajo"});
+            "Celular"});
             this.cbTipo1.Location = new System.Drawing.Point(237, 194);
             this.cbTipo1.Name = "cbTipo1";
             this.cbTipo1.Size = new System.Drawing.Size(124, 24);
