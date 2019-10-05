@@ -51,7 +51,7 @@ Create Proc USP_INS_NEW_USU
 			(select NAC.fld_cod_nac from Tbl_Nacionalidad as NAC where NAC.fld_desc_nac = @desc_nacionalidad),
 			(select CAR.fld_cod_car from Tbl_Cargo_Usuario as CAR where CAR.fld_desc_car = @desc_cargo),
 			@salario,
-			(select PAG.fld_cod_for from Tbl_Forma_Pago as PAG where PAG.fld_desc_for = @desc_forma_pago),
+			(select SAL.fld_cod_tip from Tbl_Tipo_Salario as SAL where SAL.fld_desc_tip = @desc_forma_pago),
 			(select ROL.fld_cod_rol from Tbl_Roles as ROL where ROL.fld_desc_rol = @desc_rol),
 			(select SUC.fld_cod_suc from Tbl_Sucursales as SUC where SUC.fld_nom_suc = @nombre_sucursal),
 			GETDATE(),
