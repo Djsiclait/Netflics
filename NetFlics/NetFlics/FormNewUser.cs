@@ -43,10 +43,7 @@ namespace NetFlics
 
         private void FormNewUser_Load(object sender, EventArgs e)
         {
-            lbErrorCargo.Hide();
-            lbErrorFormaPago.Hide();
-            lbErrorSalario.Hide();
-            lbErrorUsuario.Hide();
+            CleanBuffer();
         }
 
         // Button Clicks
@@ -59,42 +56,183 @@ namespace NetFlics
             Formularios.formUsersMaster.Show();
         }
 
+        private void bttLimpiar_Click(object sender, EventArgs e)
+        {
+            CleanBuffer();
+        }
+
         private void bttAgregar_Click(object sender, EventArgs e)
         {
+            bool clean = true;
+
             if (txtNombreUsuario.Text == "")
             {
                 lbErrorUsuario.Text = "Favor elegir nombre de usuario";
                 lbErrorUsuario.ForeColor = Color.Red;
                 lbErrorUsuario.Show();
+                clean = false;
             }
 
             if (cbCargo.Text == "")
+            {
                 lbErrorCargo.Show();
+                clean = false;
+            }
 
             if (txtSalario.Text == "")
             {
                 lbErrorSalario.Text = "Favor introducir salario";
                 lbErrorUsuario.ForeColor = Color.Red;
                 lbErrorSalario.Show();
+                clean = false;
             }
             else if (!ValidateSalary())
             {
                 lbErrorSalario.Text = "Formato invalido";
                 lbErrorSalario.ForeColor = Color.Red;
                 lbErrorSalario.Show();
+                clean = false;
             }
 
             if (cbFormaPago.Text == "")
+            {
                 lbErrorFormaPago.Show();
-            
-        }
+                clean = false;
+            }
 
-        private void cbCargo_Click(object sender, EventArgs e)
-        {
-            if (lbErrorUsuario.Visible && lbErrorUsuario.Text != "")
-                lbErrorUsuario.Hide();
+            if (cbRol.Text == "")
+            {
+                lbErrorRol.Show();
+                clean = false;
+            }
 
-            ValidateUsername();
+            if (cbSucursal.Text == "")
+            {
+                lbErrorSucursal.Show();
+                clean = false;
+            }
+
+            if (txtNombre.Text == "")
+            {
+                lbErrorNombre.Show();
+                clean = false;
+            }
+
+            if (txtApellido.Text == "")
+            {
+                lbErrorApellido.Show();
+                clean = false;
+            }
+
+            // TODO: validate that 1234 isint considered a firstname or lastname
+
+            if (cbTipoDocumento.Text == "")
+            {
+                lbErrorTipoDocumento.Show();
+                clean = false;
+            }
+
+            if (txtDocumento.Text == "")
+            {
+                lbErrorDocumento.Show();
+                clean = false;
+            }
+
+            if (txtCorreo.Text == "")
+            {
+                lbErrorCorreo.Text = "Favor introducir un correo";
+                lbErrorCorreo.ForeColor = Color.Red;
+                lbErrorCorreo.Show();
+                clean = false;
+            }
+            else if (!ValidateEmail())
+            {
+                lbErrorCorreo.Text = "Formato invalido";
+                lbErrorCorreo.ForeColor = Color.Red;
+                lbErrorCorreo.Show();
+                clean = false;
+            }
+
+            if (cbSexo.Text == "")
+            {
+                lbErrorSexo.Show();
+                clean = false;
+            }
+
+            // TODO: Validate Date of birth to exclude minors < 18
+
+            if (cbNacionalidad.Text == "")
+            {
+                lbErrorNacionalidad.Show();
+                clean = false;
+            }
+
+            // Telefono 1
+            if (txtTelefono1.Text == "")
+            {
+                lbErrorTelefono1.Text = "Favor introducir un numero de telefono";
+                lbErrorTelefono1.ForeColor = Color.Red;
+                lbErrorTelefono1.Show();
+                clean = false;
+            }
+            else if (!ValidatePhoneNumber(txtTelefono1.Text))
+            {
+                lbErrorTelefono1.Text = "Formato invalido";
+                lbErrorTelefono1.ForeColor = Color.Red;
+                lbErrorTelefono1.Show();
+                clean = false;
+            }
+
+            if (cbTipo1.Text == "")
+            {
+                lbErrorTipo1.Show();
+                clean = false;
+            }
+
+            // Telefono 2 -- Optional
+            if (txtTelefono2.Text != "" && !ValidatePhoneNumber(txtTelefono2.Text))
+            {
+                lbErrorTelefono2.Text = "Formato invalido";
+                lbErrorTelefono2.ForeColor = Color.Red;
+                lbErrorTelefono2.Show();
+                clean = false;
+            }
+
+            if (txtTelefono2.Text != "" && cbTipo2.Text == "")
+            {
+                lbErrorTipo2.Show();
+                clean = false;
+            }
+
+            // Direccion
+            if (txtDireccion.Text == "")
+            {
+                lbErrorDireccion.Show();
+                clean = false;
+            }
+
+            if (cbTipoDireccion.Text == "")
+            {
+                lbErrorTipoDireccion.Show();
+                clean = false;
+            }
+
+            if (txtSector.Text == "")
+            {
+                lbErrorSector.Show();
+                clean = false;
+            }
+
+            if (txtCiudad.Text == "")
+            {
+                lbErrorCiudad.Show();
+            }
+
+            // All data have been validated
+            if (clean)
+            { 
+                MessageBox.Show("Success"); // TODO: Add New User
+            }
         }
 
         // Key Downs
@@ -107,7 +245,12 @@ namespace NetFlics
         private void cbCargo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorCargo.Visible && cbCargo.Text != "")
+                    lbErrorCargo.Hide();
+
                 txtSalario.Focus();
+            }
         }
 
         private void txtSalario_KeyDown(object sender, KeyEventArgs e)
@@ -115,7 +258,7 @@ namespace NetFlics
             if (e.KeyCode == Keys.Enter)
                 if (ValidateSalary())
                 {
-                    lbErrorSalario.Text = "Salario valido";
+                    lbErrorSalario.Text = "Salario valido!";
                     lbErrorSalario.ForeColor = Color.Green;
                     lbErrorSalario.Show();
                     cbFormaPago.Focus();
@@ -130,19 +273,318 @@ namespace NetFlics
                 }
         }
 
-        // Misceleanous
+        private void cbFormaPago_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorFormaPago.Visible && cbFormaPago.Text != "")
+                    lbErrorFormaPago.Hide();
+
+                cbRol.Focus();
+            }
+        }
+
+        private void cbRol_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorRol.Visible && cbRol.Text != "")
+                    lbErrorRol.Hide();
+
+                cbSucursal.Focus();
+            }
+        }
+
+        private void cbSucursal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorSucursal.Visible && cbSucursal.Text != "")
+                    lbErrorSucursal.Hide();
+
+                txtNombre.Focus();
+            }
+        }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorNombre.Visible && txtNombre.Text != "")
+                    lbErrorNombre.Hide();
+
+                txtApellido.Focus();
+            }
+        }
+
+        private void txtApellido_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorApellido.Visible && txtApellido.Text != "")
+                    lbErrorApellido.Hide();
+
+                cbTipoDocumento.Focus();
+            }
+        }
+
+        private void cbTipoDocumento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorTipoDocumento.Visible && cbTipoDocumento.Text != "")
+                    lbErrorTipoDocumento.Hide();
+
+                txtDocumento.Focus();
+            }
+        }
+
+        private void txtDocumento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorDocumento.Visible && txtDocumento.Text != "")
+                    lbErrorDocumento.Hide();
+
+                txtCorreo.Focus();
+            }
+        }
+
+        private void txtCorreo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                if (ValidateEmail())
+                {
+                    lbErrorCorreo.Text = "Correo valido!";
+                    lbErrorCorreo.ForeColor = Color.Green;
+                    lbErrorCorreo.Show();
+                    cbSexo.Focus();
+                    ValidateUsername();
+                }
+                else
+                {
+                    txtCorreo.Focus();
+                    lbErrorCorreo.Text = "Formato invalido";
+                    lbErrorCorreo.ForeColor = Color.Red;
+                    lbErrorCorreo.Show();
+                }
+        }
+
+        private void cbSexo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorSexo.Visible && cbSexo.Text != "")
+                    lbErrorSexo.Hide();
+
+                dtFechaNacimiento.Focus();
+            }
+        }
+
+        private void dtFechaNacimiento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // TODO: Validate Date of birth to exclude minors < 18
+
+                cbNacionalidad.Focus();
+            }
+        }
+
+        private void cbNacionalidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorNacionalidad.Visible && cbNacionalidad.Text != "")
+                    lbErrorNacionalidad.Hide();
+                   
+                txtTelefono1.Focus();
+            }
+        }
+
+        private void txtTelefono1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                if (ValidatePhoneNumber(txtTelefono1.Text))
+                {
+                    lbErrorTelefono1.Text = "Telefono valido!";
+                    lbErrorTelefono1.ForeColor = Color.Green;
+                    lbErrorTelefono1.Show();
+                    cbTipo1.Focus();
+                    ValidateUsername();
+                }
+                else
+                {
+                    txtTelefono1.Focus();
+                    lbErrorTelefono1.Text = "Formato invalido";
+                    lbErrorTelefono1.ForeColor = Color.Red;
+                    lbErrorTelefono1.Show();
+                }
+        }
+
+        private void cbTipo1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorTipo1.Visible && cbTipo1.Text != "")
+                    lbErrorTipo1.Hide();
+
+                txtTelefono2.Focus();
+            }
+        }
+
+        private void txtTelefono2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                if (ValidatePhoneNumber(txtTelefono2.Text))
+                {
+                    lbErrorTelefono2.Text = "Telefono valido!";
+                    lbErrorTelefono2.ForeColor = Color.Green;
+                    lbErrorTelefono2.Show();
+                    cbTipo2.Focus();
+                    ValidateUsername();
+                }
+                else
+                {
+                    txtTelefono2.Focus();
+                    lbErrorTelefono2.Text = "Formato invalido";
+                    lbErrorTelefono2.ForeColor = Color.Red;
+                    lbErrorTelefono2.Show();
+                }
+        }
+
+        private void cbTipo2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorTipo2.Visible && cbTipo2.Text != "")
+                    lbErrorTipo2.Hide();
+
+                txtDireccion.Focus();
+            }
+        }
+
+        private void txtDireccion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorDireccion.Visible && txtDireccion.Text != "")
+                    lbErrorDireccion.Hide();
+
+                cbTipoDireccion.Focus();
+            }
+        }
+
+        private void cbTipoDireccion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorTipoDireccion.Visible && cbTipoDireccion.Text != "")
+                    lbErrorTipoDireccion.Hide();
+
+                txtSector.Focus();
+            }
+        }
+
+        private void txtSector_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorSector.Visible && txtSector.Text != "")
+                    lbErrorSector.Hide();
+
+                txtCiudad.Focus();
+            }
+        }
+
+        private void txtCiudad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lbErrorCiudad.Visible && txtCiudad.Text != "")
+                    lbErrorCiudad.Hide();
+
+                bttAgregar.Focus();
+            }
+        }
+
+        // Index Change
         private void cbCargo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lbErrorUsuario.Visible && lbErrorUsuario.Text != "")
-                lbErrorUsuario.Hide();
+            if (lbErrorCargo.Visible)
+                lbErrorCargo.Hide();
 
             ValidateUsername();
         }
 
         private void cbFormaPago_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lbErrorUsuario.Visible && lbErrorUsuario.Text != "")
+            if (lbErrorFormaPago.Visible)
                 lbErrorFormaPago.Hide();
+
+            ValidateUsername();
+        }
+
+        private void cbRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbErrorRol.Visible)
+                lbErrorRol.Hide();
+
+            ValidateUsername();
+        }
+
+        private void cbSucursal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbErrorSucursal.Visible)
+                lbErrorSucursal.Hide();
+
+            ValidateUsername();
+        }
+
+        private void cbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbErrorTipoDocumento.Visible)
+                lbErrorTipoDocumento.Hide();
+
+            ValidateUsername();
+        }
+
+        private void cbSexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbErrorSexo.Visible)
+                lbErrorSexo.Hide();
+
+            ValidateUsername();
+        }
+
+        private void cbNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbErrorNacionalidad.Visible)
+                lbErrorNacionalidad.Hide();
+
+            ValidateUsername();
+        }
+
+        private void cbTipo1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbErrorTipo1.Visible)
+                lbErrorTipo1.Hide();
+
+            ValidateUsername();
+        }
+
+        private void cbTipo2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbErrorTipo2.Visible)
+                lbErrorTipo2.Hide();
+
+            ValidateUsername();
+        }
+
+        private void cbTipoDireccion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbErrorTipoDireccion.Visible)
+                lbErrorTipoDireccion.Hide();
 
             ValidateUsername();
         }
@@ -156,7 +598,6 @@ namespace NetFlics
 
                 if (message == "Disponible")
                 {
-                    cbCargo.Focus();
                     lbErrorUsuario.Text = "Disponible!";
                     lbErrorUsuario.ForeColor = Color.Green;
                     lbErrorUsuario.Show();
@@ -172,7 +613,6 @@ namespace NetFlics
             }
             else
             {
-                txtNombreUsuario.Focus();
                 lbErrorUsuario.Text = "Favor elegir nombre de usuario";
                 lbErrorUsuario.ForeColor = Color.Red;
                 lbErrorUsuario.Show();
@@ -183,6 +623,78 @@ namespace NetFlics
         {
             float n;
             return float.TryParse(txtSalario.Text, out n);
+        }
+
+        private bool ValidateEmail()
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(txtCorreo.Text);
+
+                return addr.Address == txtCorreo.Text;
+
+            } catch (Exception e)
+            {
+                MessageBox.Show("ERROR FATAL: " + e.Message);
+            }
+
+            return false;
+
+        }
+
+        private bool ValidatePhoneNumber(string phoneNumber)
+        {
+            long n;
+            return long.TryParse(phoneNumber, out n);
+        }
+
+        private void CleanBuffer()
+        {
+            lbErrorApellido.Hide();
+            lbErrorCargo.Hide();
+            lbErrorCiudad.Hide();
+            lbErrorCorreo.Hide();
+            lbErrorDireccion.Hide();
+            lbErrorDocumento.Hide();
+            lbErrorFechaNacimiento.Hide();
+            lbErrorFormaPago.Hide();
+            lbErrorNacionalidad.Hide();
+            lbErrorNombre.Hide();
+            lbErrorRol.Hide();
+            lbErrorSalario.Hide();
+            lbErrorSector.Hide();
+            lbErrorSexo.Hide();
+            lbErrorSucursal.Hide();
+            lbErrorTelefono1.Hide();
+            lbErrorTelefono2.Hide();
+            lbErrorTipo1.Hide();
+            lbErrorTipo2.Hide();
+            lbErrorTipoDireccion.Hide();
+            lbErrorTipoDocumento.Hide();
+            lbErrorUsuario.Hide();
+
+            txtNombreUsuario.Text = "";
+            cbCargo.Text = "";
+            txtSalario.Text = "";
+            cbFormaPago.Text = "";
+            cbRol.Text = "";
+            cbSucursal.Text = "";
+
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            cbTipoDocumento.Text = "";
+            txtDocumento.Text = "";
+            txtCorreo.Text = "";
+            cbSexo.Text = "";
+            cbNacionalidad.Text = "";
+            txtTelefono1.Text = "";
+            cbTipo1.Text = "";
+            txtTelefono2.Text = "";
+            cbTipo2.Text = "";
+            txtDireccion.Text = "";
+            cbTipoDireccion.Text = "";
+            txtSector.Text = "";
+            txtCiudad.Text = "";
         }
     }
 }
