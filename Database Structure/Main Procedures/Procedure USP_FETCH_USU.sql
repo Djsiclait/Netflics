@@ -5,7 +5,7 @@ Create Proc USP_FETCH_USU -- Store Procedure para extraer los datos necesarios p
 		select
 			USU.fld_cod_usu,
 			USU.fld_doc_usu,
-			USU.fld_tip_doc,
+			DOC.fld_desc_tip,
 			USU.fld_nom_usu,
 			USU.fld_ape_usu,
 			USU.fld_cor_usu,
@@ -19,6 +19,7 @@ Create Proc USP_FETCH_USU -- Store Procedure para extraer los datos necesarios p
 			SUC.fld_nom_suc
 		from 
 			Tbl_Usuarios as USU
+		Inner Join Tbl_Tipo_Documento as DOC on DOC.fld_cod_tip = USU.fld_tip_doc
 		Inner Join Tbl_Sexo as SEX on SEX.fld_cod_sex = USU.fld_sex_usu
 		Inner Join Tbl_Nacionalidad as NAC on NAC.fld_cod_nac = USU.fld_nac_usu
 		Inner Join Tbl_Cargo_Usuario as CAR on CAR.fld_cod_car = USU.fld_car_usu
