@@ -33,25 +33,10 @@ namespace NetFlics
 
         private void FormMainMenu_Load(object sender, EventArgs e)
         {
-            lblMessage.Text = "Session de : " + 
+            lblMessage.Text = "Session de : " +
                 CapaEntidad.UserSession.userSession.username +
                 "\nRole: " +
-                SpecifyRole();
-        }
-
-        private string SpecifyRole()
-        {
-            switch (CapaEntidad.UserSession.userSession.role)
-            {
-                case "S":
-                    return "Super Admin";
-                case "A":
-                    return "Admin";
-                case "F":
-                    return "Fiscal";
-                default:
-                    return "Usuario";
-            }
+                CapaEntidad.UserSession.userSession.role;
         }
 
         private void bttSalir_Click(object sender, EventArgs e)

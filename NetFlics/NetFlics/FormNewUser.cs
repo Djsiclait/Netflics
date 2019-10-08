@@ -22,9 +22,8 @@ namespace NetFlics
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
-
-            string username = CapaEntidad.UserSession.userSession.username;
-            string message = CapaNegocios.ModificarNegocios.UserLogOut(username, "MAIN");
+          
+            string message = CapaNegocios.ModificarNegocios.UserLogOut(CapaEntidad.UserSession.userSession.username, "MAIN");
 
             if (message == "EXITO")
             {
@@ -720,7 +719,7 @@ namespace NetFlics
                 return addr.Address == txtCorreo.Text;
 
             } catch (Exception e)
-            {
+            { 
                 MessageBox.Show("ERROR FATAL: " + e.Message);
             }
 

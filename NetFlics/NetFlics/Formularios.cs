@@ -19,5 +19,7 @@ namespace NetFlics
         public static FormPasswordChange formPasswordChange = new FormPasswordChange();
 
         public static FormNewUser formNewUser = new FormNewUser();
+
+        public static FormModifyUser formModifyUser = new FormModifyUser("");
     }
 }

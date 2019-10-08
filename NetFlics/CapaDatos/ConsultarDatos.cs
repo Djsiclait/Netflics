@@ -50,10 +50,48 @@ namespace CapaDatos
                 user.username = dataReader["fld_cod_usu"].ToString();
                 user.firstName = dataReader["fld_nom_usu"].ToString();
                 user.lastName = dataReader["fld_ape_usu"].ToString();
-                user.role = dataReader["fld_rol_usu"].ToString();
+                user.role = dataReader["fld_desc_rol"].ToString();
             }
 
             DisconnectFromDatabase();
+
+            return user;
+        }
+
+        public static User FetchUserData(string username)
+        {
+            User user = new User();
+
+            ConnectToDatabase();
+
+            SqlCommand cmd = new SqlCommand("USP_FETCH_USU", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 50).Value = username;
+
+            SqlDataReader dataReader;
+
+            dataReader = cmd.ExecuteReader();
+
+            while(dataReader.Read())
+            {
+                user = new User();
+
+                user.username = dataReader["fld_cod_usu"].ToString();
+                user.identification = dataReader["fld_doc_usu"].ToString();
+                user.identificationType = dataReader["fld_desc_tip"].ToString();
+                user.firstName = dataReader["fld_nom_usu"].ToString();
+                user.lastName = dataReader["fld_ape_usu"].ToString();
+                user.email = dataReader["fld_cor_usu"].ToString();
+                user.gender = dataReader["fld_desc_sex"].ToString();
+                user.birthDate = Convert.ToDateTime(dataReader["fld_fec_nac"].ToString());
+                user.nationality = dataReader["fld_desc_nac"].ToString();
+                user.position = dataReader["fld_desc_car"].ToString();
+                user.salary = FormatSalary(dataReader["fld_sal_usu"].ToString());
+                user.paymentSchedule = dataReader["fld_desc_tip"].ToString();
+                user.role = dataReader["fld_desc_rol"].ToString();
+                user.branchOffice = dataReader["fld_nom_suc"].ToString();
+            }
 
             return user;
         }
@@ -115,6 +153,16 @@ namespace CapaDatos
             re = Convert.ToInt32(cmd.ExecuteNonQuery());
 
             return cmd.Parameters["@message"].Value.ToString();
+        }
+
+        // Auxiliary Functions
+        private static float FormatSalary(string salary)
+        {
+            float sal;
+
+            float.TryParse(salary, out sal);
+
+            return sal;
         }
     }
 }

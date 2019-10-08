@@ -185,6 +185,7 @@
             this.bttModificarUsuario.TabIndex = 5;
             this.bttModificarUsuario.Text = "Modificar Usuario";
             this.bttModificarUsuario.UseVisualStyleBackColor = false;
+            this.bttModificarUsuario.Click += new System.EventHandler(this.bttModificarUsuario_Click);
             // 
             // bttNuevoUsuario
             // 

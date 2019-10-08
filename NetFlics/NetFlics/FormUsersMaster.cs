@@ -66,11 +66,17 @@ namespace NetFlics
             dgUsuarios.DataSource = CapaNegocios.ConsultarNegocios.SearchUserRegistry(category, keyword);
 
             dgUsuarios.Columns["username"].HeaderText = "Nombre de Usuario";
+            dgUsuarios.Columns["identification"].Visible = false;
+            dgUsuarios.Columns["identificationType"].Visible = false;
             dgUsuarios.Columns["firstname"].HeaderText = "Nombre";
             dgUsuarios.Columns["lastname"].HeaderText = "Apellido";
             dgUsuarios.Columns["email"].HeaderText = "Correo";
             dgUsuarios.Columns["gender"].HeaderText = "Sexo";
+            dgUsuarios.Columns["birthDate"].Visible = false;
+            dgUsuarios.Columns["nationality"].Visible = false;
             dgUsuarios.Columns["position"].HeaderText = "Cargo";
+            dgUsuarios.Columns["salary"].Visible = false;
+            dgUsuarios.Columns["paymentSchedule"].Visible = false;
             dgUsuarios.Columns["role"].HeaderText = "Rol";
             dgUsuarios.Columns["branchOffice"].HeaderText = "Sucursal";
         }
@@ -96,6 +102,16 @@ namespace NetFlics
             // Calling page to add new user to the registry
             Formularios.formNewUser = new FormNewUser();
             Formularios.formNewUser.Show();
+        }
+
+        private void bttModificarUsuario_Click(object sender, EventArgs e)
+        {
+            string selectedUser = dgUsuarios.Rows[dgUsuarios.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            Formularios.formUsersMaster.Dispose();
+           
+            // Calling page to modify user
+            Formularios.formModifyUser = new FormModifyUser(selectedUser);
+            Formularios.formModifyUser.Show();
         }
     }
 }

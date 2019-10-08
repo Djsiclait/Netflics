@@ -18,3 +18,4 @@ C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\b
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormUsersMaster.resources
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormPasswordChange.resources
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormNewUser.resources
+C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormModifyUser.resources
