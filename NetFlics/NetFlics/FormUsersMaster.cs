@@ -113,5 +113,15 @@ namespace NetFlics
             Formularios.formModifyUser = new FormModifyUser(selectedUser);
             Formularios.formModifyUser.Show();
         }
+
+        private void dgUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string selectedUser = dgUsuarios.Rows[dgUsuarios.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            Formularios.formUsersMaster.Dispose();
+
+            // Calling page to modify user
+            Formularios.formModifyUser = new FormModifyUser(selectedUser);
+            Formularios.formModifyUser.Show();
+        }
     }
 }
