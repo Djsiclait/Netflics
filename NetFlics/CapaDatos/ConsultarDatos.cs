@@ -73,7 +73,7 @@ namespace CapaDatos
 
             dataReader = cmd.ExecuteReader();
 
-            while(dataReader.Read())
+            while (dataReader.Read())
             {
                 user = new User();
 
@@ -94,6 +94,35 @@ namespace CapaDatos
             }
 
             return user;
+        }
+
+        public static List<Telephone> FetchUserTelephoneData(String username)
+        {
+            List<Telephone> telephones = new List<Telephone>();
+
+            ConnectToDatabase();
+
+            SqlCommand cmd = new SqlCommand("USP_FETCH_TEL_USU", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 50).Value = username;
+
+            SqlDataReader dataReader;
+            dataReader = cmd.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                Telephone telephone = new Telephone();
+
+                telephone.owner = dataReader["fld_cod_cli"].ToString();
+                telephone.phoneNumber = dataReader["fld_tel_cli"].ToString();
+                telephone.phoneType = dataReader["fld_desc_tip"].ToString();
+                telephone.phoneState = dataReader["fld_desc_est"].ToString();
+
+                telephones.Add(telephone);
+            }
+
+            return telephones;
         }
 
         public static List<User> SearchUserRegistry(string category, string keyword)

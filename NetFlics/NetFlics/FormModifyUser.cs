@@ -613,6 +613,23 @@ namespace NetFlics
             dtFechaNacimiento.Text = fetchedUser.birthDate.ToString();
             cbNacionalidad.Text = fetchedUser.nationality;
 
+            List<Telephone> telephones = CapaNegocios.ConsultarNegocios.FetchUserTelephoneData(this.username);
+
+
+            if (telephones.Count > 0)
+                if (telephones[0].phoneNumber != "" || telephones[0].phoneNumber != null)
+                {
+                    txtTelefono1.Text = telephones[0].phoneNumber;
+                    cbTipo1.Text = telephones[0].phoneType;
+                }
+
+            if (telephones.Count > 1)
+                if (telephones[1].phoneNumber != "" || telephones[1].phoneNumber != null)
+                {
+                    txtTelefono2.Text = telephones[1].phoneNumber;
+                    cbTipo2.Text = telephones[1].phoneType;
+                }
+
         }
 
         private void CleanBuffer()
