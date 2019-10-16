@@ -614,8 +614,6 @@ namespace NetFlics
             cbNacionalidad.Text = fetchedUser.nationality;
 
             List<Telephone> telephones = CapaNegocios.ConsultarNegocios.FetchUserTelephoneData(this.username);
-
-
             if (telephones.Count > 0)
                 if (telephones[0].phoneNumber != "" || telephones[0].phoneNumber != null)
                 {
@@ -630,6 +628,14 @@ namespace NetFlics
                     cbTipo2.Text = telephones[1].phoneType;
                 }
 
+            Address address = CapaNegocios.ConsultarNegocios.FetchUserAddressData(this.username);
+            if (address != null)
+            {
+                txtDireccion.Text = address.address;
+                cbTipoDireccion.Text = address.addressType;
+                txtSector.Text = address.sector;
+                txtCiudad.Text = address.city;
+            }
         }
 
         private void CleanBuffer()

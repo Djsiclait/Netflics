@@ -125,6 +125,32 @@ namespace CapaDatos
             return telephones;
         }
 
+        public static Address FetchUserAddressData(string username)
+        {
+            Address address = new Address();
+
+            ConnectToDatabase();
+
+            SqlCommand cmd = new SqlCommand("USP_FETCH_DIR_USU", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 50).Value = username;
+
+            SqlDataReader dataReader;
+            dataReader = cmd.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                address.owner = dataReader["fld_cod_cli"].ToString();
+                address.addressType = dataReader["fld_desc_tip"].ToString();
+                address.address = dataReader["fld_dir_cli"].ToString();
+                address.sector = dataReader["fld_sec_dir"].ToString();
+                address.city = dataReader["fld_ciu_dir"].ToString();
+            }
+
+            return address;
+        }
+
         public static List<User> SearchUserRegistry(string category, string keyword)
         {
             List<User> registry = new List<User>();

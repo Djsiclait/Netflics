@@ -114,7 +114,7 @@ namespace NetFlics
             Formularios.formModifyUser.Show();
         }
 
-        private void dgUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgUsuarios_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string selectedUser = dgUsuarios.Rows[dgUsuarios.CurrentCell.RowIndex].Cells[0].Value.ToString();
             Formularios.formUsersMaster.Dispose();

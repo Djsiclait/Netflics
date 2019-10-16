@@ -22,6 +22,10 @@ namespace CapaNegocios
         {
             return CapaDatos.ConsultarDatos.FetchUserTelephoneData(username);
         }
+        public static Address FetchUserAddressData(string username)
+        {
+            return CapaDatos.ConsultarDatos.FetchUserAddressData(username);
+        }
         public static List<User> SearchUserRegistry(string category, string keyword)
         {
             return CapaDatos.ConsultarDatos.SearchUserRegistry(category, keyword);

@@ -214,7 +214,7 @@
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.Size = new System.Drawing.Size(846, 408);
             this.dgUsuarios.TabIndex = 0;
-            this.dgUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellClick);
+            this.dgUsuarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellContentDoubleClick);
             // 
             // label3
             // 
