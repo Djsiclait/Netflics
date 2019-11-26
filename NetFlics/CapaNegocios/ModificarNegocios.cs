@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
+using CapaEntidad;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -15,7 +16,6 @@ namespace CapaNegocios
         {
             return CapaDatos.ModificarDatos.UserLogIn(username, password, branchOffice);
         }
-
         public static string UserLogOut(string username, string branchOffice)
         {
             return CapaDatos.ModificarDatos.UserLogOut(username, branchOffice);
@@ -24,6 +24,9 @@ namespace CapaNegocios
         {
             return CapaDatos.ModificarDatos.ChangeUserPassword(username, newPassword);
         }
-
+        public static string ModifyUserInformation(User user, string userInSession)
+        {
+            return CapaDatos.ModificarDatos.ModifyUserInformation(user, userInSession);
+        }
     }
 }

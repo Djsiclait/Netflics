@@ -96,7 +96,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.bttAgregar = new System.Windows.Forms.Button();
+            this.bttModificar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -999,19 +999,19 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Nombre";
             // 
-            // bttAgregar
+            // bttModificar
             // 
-            this.bttAgregar.BackColor = System.Drawing.Color.Green;
-            this.bttAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bttAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttAgregar.ForeColor = System.Drawing.Color.Silver;
-            this.bttAgregar.Location = new System.Drawing.Point(532, 615);
-            this.bttAgregar.Name = "bttAgregar";
-            this.bttAgregar.Size = new System.Drawing.Size(169, 33);
-            this.bttAgregar.TabIndex = 30;
-            this.bttAgregar.Text = "Agregar";
-            this.bttAgregar.UseVisualStyleBackColor = false;
-            this.bttAgregar.Click += new System.EventHandler(this.bttAgregar_Click);
+            this.bttModificar.BackColor = System.Drawing.Color.Green;
+            this.bttModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttModificar.ForeColor = System.Drawing.Color.Silver;
+            this.bttModificar.Location = new System.Drawing.Point(532, 615);
+            this.bttModificar.Name = "bttModificar";
+            this.bttModificar.Size = new System.Drawing.Size(169, 33);
+            this.bttModificar.TabIndex = 30;
+            this.bttModificar.Text = "Modificar";
+            this.bttModificar.UseVisualStyleBackColor = false;
+            this.bttModificar.Click += new System.EventHandler(this.bttModificar_Click);
             // 
             // label2
             // 
@@ -1072,7 +1072,7 @@
             this.Controls.Add(this.bttCancelar);
             this.Controls.Add(this.gbDatosUsuarios);
             this.Controls.Add(this.gbDatosPersonales);
-            this.Controls.Add(this.bttAgregar);
+            this.Controls.Add(this.bttModificar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -1160,7 +1160,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button bttAgregar;
+        private System.Windows.Forms.Button bttModificar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;

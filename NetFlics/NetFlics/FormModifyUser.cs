@@ -60,7 +60,7 @@ namespace NetFlics
             Formularios.formUsersMaster.Show();
         }
 
-        private void bttAgregar_Click(object sender, EventArgs e)
+        private void bttModificar_Click(object sender, EventArgs e)
         {
             bool clean = true;
 
@@ -219,6 +219,30 @@ namespace NetFlics
                 lbErrorCiudad.Show();
             }
 
+            // TODO: Modify user info
+            if (clean)
+            {
+                User user = SaveModifiedInformation();
+
+                string message = CapaNegocios.ModificarNegocios.ModifyUserInformation(user, CapaEntidad.UserSession.userSession.username);
+
+                if (message == "ERROR")
+                {
+                    MessageBox.Show("Error Fatal");
+                }
+                else
+                {
+                    Formularios.formModifyUser.Dispose();
+
+                    Formularios.formUsersMaster = new FormUsersMaster();
+                    Formularios.formUsersMaster.Show();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Favor revisar modificaciones");
+            }
 
         }
 
@@ -487,7 +511,7 @@ namespace NetFlics
                 if (lbErrorCiudad.Visible && txtCiudad.Text != "")
                     lbErrorCiudad.Hide();
 
-                bttAgregar.Focus();
+                bttModificar.Focus();
             }
         }
 
@@ -554,11 +578,33 @@ namespace NetFlics
         }
 
         // Auxiliar Function 
+        private User SaveModifiedInformation()
+        {
+            User user = new User();
+
+            user.username = txtNombreUsuario.Text;
+            user.identification = txtDocumento.Text;
+            user.identificationType = cbTipoDocumento.Text;
+            user.firstName = txtNombre.Text;
+            user.lastName = txtApellido.Text;
+            user.email = txtCorreo.Text;
+            user.gender = cbSexo.Text;
+            user.birthDate = Convert.ToDateTime(dtFechaNacimiento.Text);
+            user.nationality = cbNacionalidad.Text;
+            user.position = cbCargo.Text;
+            user.salary = FormatSalary();
+            user.paymentSchedule = cbFormaPago.Text;
+            user.role = cbRol.Text;
+            user.branchOffice = cbSucursal.Text;
+
+            return user;
+        }
+
         private float FormatSalary()
         {
             float salary;
 
-        float.TryParse(txtSalario.Text, out salary);
+            float.TryParse(txtSalario.Text, out salary);
 
             return salary;
         }
