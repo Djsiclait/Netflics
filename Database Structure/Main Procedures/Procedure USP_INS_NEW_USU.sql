@@ -24,7 +24,7 @@ Create Proc USP_INS_NEW_USU
 			fld_tip_doc,
 			fld_nom_usu,
 			fld_ape_usu,
-			fld_cor_usu,
+			fld_cor_cli,
 			fld_sex_usu,
 			fld_fec_nac,
 			fld_edad_usu,

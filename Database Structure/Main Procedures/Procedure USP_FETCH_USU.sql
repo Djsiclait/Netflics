@@ -8,7 +8,7 @@ Create Proc USP_FETCH_USU -- Store Procedure para extraer los datos necesarios p
 			DOC.fld_desc_tip,
 			USU.fld_nom_usu,
 			USU.fld_ape_usu,
-			USU.fld_cor_usu,
+			USU.fld_cor_cli,
 			SEX.fld_desc_sex,
 			USU.fld_fec_nac,
 			NAC.fld_desc_nac,

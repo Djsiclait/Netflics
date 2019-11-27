@@ -54,10 +54,3 @@ Create Proc USP_MOD_TIP_DIR
 				set @message = 'Codigo Invalido'
 			End
 	End
-
-
-
-
-
-
-

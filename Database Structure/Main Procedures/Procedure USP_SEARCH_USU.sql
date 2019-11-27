@@ -11,7 +11,7 @@ Create Proc USP_SEARCH_USU
 					DOC.fld_desc_tip,
 					USU.fld_nom_usu,
 					USU.fld_ape_usu,
-					USU.fld_cor_usu,
+					USU.fld_cor_cli,
 					SEX.fld_desc_sex,
 					USU.fld_fec_nac,
 					NAC.fld_desc_nac,
@@ -44,7 +44,7 @@ Create Proc USP_SEARCH_USU
 					DOC.fld_desc_tip,
 					USU.fld_nom_usu,
 					USU.fld_ape_usu,
-					USU.fld_cor_usu,
+					USU.fld_cor_cli,
 					SEX.fld_desc_sex,
 					USU.fld_fec_nac,
 					NAC.fld_desc_nac,
@@ -63,7 +63,7 @@ Create Proc USP_SEARCH_USU
 				Inner Join Tbl_Roles as ROL on ROL.fld_cod_rol = USU.fld_rol_usu
 				Inner Join Tbl_Sucursales as SUC on SUC.fld_cod_suc = USU.fld_suc_usu
 				where 
-					USU.fld_cor_usu like '%' + @buscado + '%'
+					USU.fld_cor_cli like '%' + @buscado + '%'
 			End
 
 		if @categoria = 'Nombre' -- busqueda poe nombre o apellido
@@ -74,7 +74,7 @@ Create Proc USP_SEARCH_USU
 					DOC.fld_desc_tip,
 					USU.fld_nom_usu,
 					USU.fld_ape_usu,
-					USU.fld_cor_usu,
+					USU.fld_cor_cli,
 					SEX.fld_desc_sex,
 					USU.fld_fec_nac,
 					NAC.fld_desc_nac,
@@ -110,7 +110,7 @@ Create Proc USP_SEARCH_USU
 							DOC.fld_desc_tip,
 							USU.fld_nom_usu,
 							USU.fld_ape_usu,
-							USU.fld_cor_usu,
+							USU.fld_cor_cli,
 							SEX.fld_desc_sex,
 							USU.fld_fec_nac,
 							NAC.fld_desc_nac,
@@ -139,7 +139,7 @@ Create Proc USP_SEARCH_USU
 							DOC.fld_desc_tip,
 							USU.fld_nom_usu,
 							USU.fld_ape_usu,
-							USU.fld_cor_usu,
+							USU.fld_cor_cli,
 							SEX.fld_desc_sex,
 							USU.fld_fec_nac,
 							NAC.fld_desc_nac,
@@ -170,7 +170,7 @@ Create Proc USP_SEARCH_USU
 					DOC.fld_desc_tip,
 					USU.fld_nom_usu,
 					USU.fld_ape_usu,
-					USU.fld_cor_usu,
+					USU.fld_cor_cli,
 					SEX.fld_desc_sex,
 					USU.fld_fec_nac,
 					NAC.fld_desc_nac,
@@ -202,7 +202,7 @@ Create Proc USP_SEARCH_USU
 					DOC.fld_desc_tip,
 					USU.fld_nom_usu,
 					USU.fld_ape_usu,
-					USU.fld_cor_usu,
+					USU.fld_cor_cli,
 					SEX.fld_desc_sex,
 					USU.fld_fec_nac,
 					NAC.fld_desc_nac,
@@ -234,7 +234,7 @@ Create Proc USP_SEARCH_USU
 					DOC.fld_desc_tip,
 					USU.fld_nom_usu,
 					USU.fld_ape_usu,
-					USU.fld_cor_usu,
+					USU.fld_cor_cli,
 					SEX.fld_desc_sex,
 					USU.fld_fec_nac,
 					NAC.fld_desc_nac,

@@ -55,7 +55,3 @@ Create Proc USP_MOD_TIP_DOC
 			End
 	End 
  
-
-
-
-

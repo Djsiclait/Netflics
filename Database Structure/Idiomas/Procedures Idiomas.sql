@@ -55,17 +55,3 @@ Create Proc USP_MOD_IDI
 			End
 	End
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-

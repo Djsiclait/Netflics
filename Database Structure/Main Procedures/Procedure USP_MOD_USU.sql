@@ -25,7 +25,7 @@ Create Proc USP_MOD_USU
 						fld_tip_doc = (select DOC.fld_cod_tip from Tbl_Tipo_Documento as DOC where DOC.fld_desc_tip = @desc_tipo_domumento),
 						fld_nom_usu = @nombre,
 						fld_ape_usu = @apellido,
-						fld_cor_usu = @correo,
+						fld_cor_cli = @correo,
 						fld_sex_usu = (select SEX.fld_cod_sex from Tbl_Sexo as SEX where SEX.fld_desc_sex = @desc_sexo),
 						fld_fec_nac = @fehca_nacimiento,
 						fld_edad_usu = DATEDIFF(Year, @fehca_nacimiento, GETDATE()),

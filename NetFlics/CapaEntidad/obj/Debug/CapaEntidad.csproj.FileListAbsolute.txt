@@ -6,3 +6,11 @@ C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaEntida
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaEntidad\obj\Debug\CapaEntidad.csproj.GenerateResource.Cache
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaEntidad\obj\Debug\CapaEntidad.exe
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\user\Desktop\Netflics\Netflics\NetFlics\CapaEntidad\bin\Debug\CapaEntidad.exe.config
+C:\Users\user\Desktop\Netflics\Netflics\NetFlics\CapaEntidad\bin\Debug\CapaEntidad.exe
+C:\Users\user\Desktop\Netflics\Netflics\NetFlics\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\user\Desktop\Netflics\Netflics\NetFlics\CapaEntidad\obj\Debug\CapaEntidad.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Netflics\Netflics\NetFlics\CapaEntidad\obj\Debug\CapaEntidad.Properties.Resources.resources
+C:\Users\user\Desktop\Netflics\Netflics\NetFlics\CapaEntidad\obj\Debug\CapaEntidad.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\Netflics\Netflics\NetFlics\CapaEntidad\obj\Debug\CapaEntidad.exe
+C:\Users\user\Desktop\Netflics\Netflics\NetFlics\CapaEntidad\obj\Debug\CapaEntidad.pdb

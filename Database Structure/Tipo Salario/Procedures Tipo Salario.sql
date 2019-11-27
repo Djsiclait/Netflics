@@ -55,13 +55,3 @@ Create Proc USP_MOD_TIP_SAL
 			End
 	End
 
-
-
-
-
-
-
-
-
-
-

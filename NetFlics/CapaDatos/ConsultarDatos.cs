@@ -12,7 +12,7 @@ namespace CapaDatos
 {
     public class ConsultarDatos
     {
-        private static string dataSource = "Data Source=DESKTOP-PNLJFN5;Initial Catalog=DBNETFLICS;User id=prueba;password=prueba";
+        private static string dataSource = "Data Source=USER-PC;Initial Catalog=DBNETFLICS;User id=prueba;password=prueba";
         private static SqlConnection connection = new SqlConnection(dataSource);
 
         private static void ConnectToDatabase()
@@ -82,7 +82,7 @@ namespace CapaDatos
                 user.identificationType = dataReader["fld_desc_tip"].ToString();
                 user.firstName = dataReader["fld_nom_usu"].ToString();
                 user.lastName = dataReader["fld_ape_usu"].ToString();
-                user.email = dataReader["fld_cor_usu"].ToString();
+                user.email = dataReader["fld_cor_cli"].ToString();
                 user.gender = dataReader["fld_desc_sex"].ToString();
                 user.birthDate = Convert.ToDateTime(dataReader["fld_fec_nac"].ToString());
                 user.nationality = dataReader["fld_desc_nac"].ToString();
@@ -175,7 +175,7 @@ namespace CapaDatos
                 user.username = dataReader["fld_cod_usu"].ToString();
                 user.firstName = dataReader["fld_nom_usu"].ToString();
                 user.lastName = dataReader["fld_ape_usu"].ToString();
-                user.email = dataReader["fld_cor_usu"].ToString();
+                user.email = dataReader["fld_cor_cli"].ToString();
                 user.gender = dataReader["fld_desc_sex"].ToString();
                 user.position = dataReader["fld_desc_car"].ToString();
                 user.role = dataReader["fld_desc_rol"].ToString();

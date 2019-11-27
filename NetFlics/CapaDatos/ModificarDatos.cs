@@ -11,7 +11,7 @@ namespace CapaDatos
 {
     public class ModificarDatos
     {
-        private static string dataSource = "Data Source=DESKTOP-PNLJFN5;Initial Catalog=DBNETFLICS;User id=prueba;password=prueba";
+        private static string dataSource = "Data Source=USER-PC;Initial Catalog=DBNETFLICS;User id=prueba;password=prueba";
         private static SqlConnection connection = new SqlConnection(dataSource);
 
         private static void ConnectToDatabase()

@@ -55,11 +55,3 @@ Create Proc INS_MOD_PAI
 			End
 	End
 
-
-
-
-
-
-
-
-

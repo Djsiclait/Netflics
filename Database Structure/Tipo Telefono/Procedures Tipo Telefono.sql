@@ -56,12 +56,3 @@ Create Proc USP_MOD_TIP_TEL
 	End
 
 
-
-
-
-
-
-
-
-
-
