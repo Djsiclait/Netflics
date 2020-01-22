@@ -8,3 +8,13 @@ C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaDatos\
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaDatos\obj\Debug\CapaDatos.pdb
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaDatos\bin\Debug\CapaEntidad.exe
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Users\user\Desktop\Netflics\NetFlics\CapaDatos\bin\Debug\CapaDatos.exe.config
+C:\Users\user\Desktop\Netflics\NetFlics\CapaDatos\bin\Debug\CapaDatos.exe
+C:\Users\user\Desktop\Netflics\NetFlics\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\user\Desktop\Netflics\NetFlics\CapaDatos\bin\Debug\CapaEntidad.exe
+C:\Users\user\Desktop\Netflics\NetFlics\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Users\user\Desktop\Netflics\NetFlics\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Netflics\NetFlics\CapaDatos\obj\Debug\CapaDatos.Properties.Resources.resources
+C:\Users\user\Desktop\Netflics\NetFlics\CapaDatos\obj\Debug\CapaDatos.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\Netflics\NetFlics\CapaDatos\obj\Debug\CapaDatos.exe
+C:\Users\user\Desktop\Netflics\NetFlics\CapaDatos\obj\Debug\CapaDatos.pdb

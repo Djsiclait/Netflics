@@ -19,3 +19,24 @@ C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\o
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormPasswordChange.resources
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormNewUser.resources
 C:\Users\user\Desktop\Training\Netflics SQL Scripts\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormModifyUser.resources
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\bin\Debug\NetFlics.exe.config
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.exe
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.pdb
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\bin\Debug\NetFlics.exe
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\bin\Debug\NetFlics.pdb
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\bin\Debug\CapaEntidad.exe
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\bin\Debug\CapaNegocios.exe
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\bin\Debug\CapaDatos.exe
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\bin\Debug\CapaEntidad.pdb
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\bin\Debug\CapaNegocios.pdb
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\bin\Debug\CapaDatos.pdb
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormLogin.resources
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormMainMenu.resources
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormModifyUser.resources
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormNewUser.resources
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormPasswordChange.resources
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormSplash.resources
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.FormUsersMaster.resources
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.Properties.Resources.resources
+C:\Users\user\Desktop\Netflics\NetFlics\NetFlics\obj\Debug\NetFlics.csproj.GenerateResource.Cache
